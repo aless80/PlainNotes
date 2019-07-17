@@ -436,7 +436,7 @@ contexts:
             - include: scope:text.html.basic
   block_raw:
     - match: '\G([ ]{4}|\t).*$\n?'
-      scope: markup.raw.block.markdown
+      scope: meta.paragraph.markdown #markup.raw.block.markdown
   bold:
     - match: |-
         (?x)

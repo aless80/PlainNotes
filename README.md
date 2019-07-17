@@ -1,6 +1,44 @@
 
-# [PlainNotes](https://github.com/aziz/PlainNotes)
-Simple and pleasant authoring and note taking for SublimeText.
+# [PlainNotes](https://github.com/aless80/PlainNotes)
+
+My fork of [PlainNotes](https://github.com/aziz/PlainNotes). 
+I tweaked the original [PlainNotes](https://github.com/aziz/PlainNotes) repository to brew my own syntax highlight for plain texts in SublimeText. 
+
+## Installation
+On linux: 
+
+```
+cd ~/.config/sublime-text-3/Packages
+git clone https://github.com/aless80/PlainNotes.git
+```
+
+To use this PlainNotes syntax for files with a certain extension, click on the bottom-right corner of Sublime Text where the current syntax is shown. Then use the "Open all with current extension with ..." option and select PlainNotes > Note.
+
+YOu are welcome to play with your own settings in the [Note.sublime-settings](https://github.com/aless80/PlainNotes/blob/master/Notes.sublime-settings) file.
+
+## Changes
+This is what I changed from the original [PlainNotes](https://github.com/aziz/PlainNotes) repository 
+ - The color_scheme is standard Monokai. See the [Note.sublime-settings](https://github.com/aless80/PlainNotes/blob/master/Notes.sublime-settings) file;
+ - Various settings such as word wrap, indentation, tab size, line numbers. See the [Note.sublime-settings](https://github.com/aless80/PlainNotes/blob/master/Notes.sublime-settings) file;
+ - Added syntax highlighting for comments: '//' and ' #'. See the [Note.sublime-syntax](https://github.com/aless80/PlainNotes/blob/master/Notes.sublime-syntax) file and search for 'custom_comments';
+ - Removed highlighting for markdown block. e.g. I suppress highlighting for lines of text following a line beginning with '#'. See the [Note.sublime-syntax](https://github.com/aless80/PlainNotes/blob/master/Notes.sublime-syntax) file and search for ' #markup.raw.block.markdown'.
+
+
+<p align="center">
+  <img src="https://github.com/aless80/PlainNotes/blob/master/Documentation/PlainNotes.png" width="727" height="416">
+</p>
+
+
+## docs
+Refer to [PlainNotes](https://github.com/aless80/PlainNotes)
+
+<!-- TODO 
+  * pairing quotes, parentheses, etc
+  * select word and then quote deletes the word instead of wrapping it in quotes
+  * ' #' triggers a comment. I guess it is ok
+-->
+
+
 
 With PlainNotes you can:
  - Organize notes and thoughts
@@ -17,9 +55,6 @@ It's been designed with these ground rules in mind:
  - Plain text shouldn't be that plain
  - Simple and Sexy is Sublime
 
-<p align="center">
-<img src="http://cl.ly/image/21143i2m3e0n/ss2.png" width="727" height="416">
-</p>
 
 **Note:** Although PlainNotes works under SublimeText 2, some features might
 not be available. We're not actively testing it under SublimeText 2 but will
