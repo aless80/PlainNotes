@@ -5,7 +5,22 @@ file_extensions:
   - note
 scope: text.html.markdown.note
 contexts:
+  custom_comments:
+    - match: '//'
+      scope: punctuation.definition.comment.begin.html
+      push:
+        - meta_scope: comment.line.double-slash.html
+        - match: $\n?
+          pop: true
+    - match: ' #'
+      scope: punctuation.definition.comment.begin.html
+      push:
+        - meta_scope: comment.line.double-slash.html
+        - match: $\n?
+          pop: true
   main:
+    - include: custom_comments
+
     - match: |-
         (?x)^
         (?= [ ]{,3}>
@@ -218,6 +233,7 @@ contexts:
     - match: '^(?=\S|[ ]{1,3})(?![=-]{3,}(?=$))'
       push:
         - meta_scope: meta.paragraph.markdown
+        - include: custom_comments
         - match: '^(?:\s*$|(?=[ ]{,3}>)|(?=```|~~~)|(?=\*\[.+?\]:.+$)|(?=\{:.+?\}\s*$)|(?=[ ]{0,3}([*+-✔✘☐])(?=\s)))|(?=[ \t]*\n)(?<=^===|^====|=====|^---|^----|-----)[ \t]*\n|(?=^#)'
           pop: true
         - include: inline
